@@ -1,0 +1,15 @@
+pandas
+numpy
+scikit-learn
+xgboost
+lightgbm
+category_encoders
+mlflow
+streamlit
+pyngrok
+torch
+imbalanced-learn
+matplotlib
+seaborn
+geopy
+

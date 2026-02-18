@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudGuard - AI Financial Protection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="glass-container">
+        <header>
+            <div class="logo">FraudGuard <span class="ai-badge">AI</span></div>
+            <p>Real-time Financial Transaction Analysis</p>
+        </header>
+
+        <main>
+            <form id="fraudForm">
+                <div class="input-group">
+                    <label for="amt">Transaction Amount ($)</label>
+                    <input type="number" id="amt" name="amt" placeholder="e.g. 500.00" required>
+                </div>
+
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="category">Category</label>
+                        <select id="category" name="category">
+                            <option value="grocery_pos">Grocery (POS)</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="shopping_pos">Shopping (POS)</option>
+                            <option value="misc_pos">Misc (POS)</option>
+                            <option value="shopping_net">Shopping (Online)</option>
+                            <option value="gas_transport">Gas & Transport</option>
+                            <option value="misc_net">Misc (Online)</option>
+                            <option value="grocery_net">Grocery (Online)</option>
+                            <option value="food_dining">Food & Dining</option>
+                            <option value="health_fitness">Health & Fitness</option>
+                            <option value="kids_pets">Kids & Pets</option>
+                            <option value="home">Home</option>
+                            <option value="personal_care">Personal Care</option>
+                            <option value="travel">Travel</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" value="30" min="18" max="120">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="hour">Hour of Day (0-23)</label>
+                        <input type="number" id="hour" name="hour" value="12" min="0" max="23">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="state">State (e.g. NY)</label>
+                    <input type="text" id="state" name="state" placeholder="NY" maxlength="2" style="text-transform:uppercase">
+                </div>
+                
+                 <div class="input-group">
+                    <label for="job">Job Title</label>
+                    <input type="text" id="job" name="job" placeholder="Engineer">
+                </div>
+
+                <button type="submit" id="submitBtn">
+                    <span class="btn-text">Analyze Transaction</span>
+                    <div class="loader"></div>
+                </button>
+            </form>
+
+            <div id="result" class="result-card hidden">
+                <div class="icon-box">
+                    <span id="resultIcon">🛡️</span>
+                </div>
+                <h3 id="resultTitle">Analysis Complete</h3>
+                <p id="resultDesc">Transaction appears safe.</p>
+                <div class="stat-bar">
+                    <div class="stat-fill" id="probFill"></div>
+                </div>
+                <p class="prob-text">Risk Probability: <span id="probValue">0%</span></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
